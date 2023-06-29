@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import data from './Content.js';
 import './Movies.css';
 
-function Movies(props) {
+function Movies() {
   const [recommendations, setRecommendations] = useState([]);
   const [details, setDetails] = useState([]);
   const [info, setInfo] = useState([]);
@@ -22,7 +22,6 @@ function Movies(props) {
         }
       }
     }
-    console.log(getMov)
     if (getMov === "") {
       alert("No movie found");
       return
@@ -74,7 +73,7 @@ function Movies(props) {
             method: 'GET',
             headers: {
               accept: 'application/json',
-              Authorization: `Bearer ${props.apiKey}`
+              Authorization: 'Bearer '
             }
           });
           const d = await data.json();
