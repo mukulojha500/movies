@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import data from './Content.js';
 import './Movies.css';
 
-function Movies() {
+function Movies(props) {
   const [recommendations, setRecommendations] = useState([]);
   const [details, setDetails] = useState([]);
   const [info, setInfo] = useState([]);
@@ -73,7 +73,7 @@ function Movies() {
             method: 'GET',
             headers: {
               accept: 'application/json',
-              Authorization: 'Bearer '
+              Authorization: `Bearer ${props.apiKey}`
             }
           });
           const d = await data.json();
