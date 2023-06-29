@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import data from './Content.js';
 import './Movies.css';
 
-function Movies(props) {
+function Movies() {
   const [recommendations, setRecommendations] = useState([]);
   const [details, setDetails] = useState([]);
   const [info, setInfo] = useState([]);
@@ -73,7 +73,7 @@ function Movies(props) {
             method: 'GET',
             headers: {
               accept: 'application/json',
-              Authorization: `Bearer ${props.apiKey}`
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDdlZmJkZTM3ODE2NDg2OTBlYzM5OWYzODY5MGMwZSIsInN1YiI6IjY0OTkzM2Q4YjM0NDA5MDExYzdjNWViYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZzzonJE0cdSIHYqKUkp9DjQWi_S7EFbXG9Ugrm_dPws'
             }
           });
           const d = await data.json();
